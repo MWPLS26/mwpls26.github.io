@@ -1,0 +1,158 @@
+body {
+  background-color: #fff4e6;
+  color: #1a001a;
+}
+
+.topBox {
+  margin: 40px;
+  max-width: 800px;
+}
+
+.box {
+  margin: 20px;
+  margin-left: 100px;
+  margin-right: 60px;
+  max-width: 700px;
+}
+
+.head {
+  margin-left: 30px;
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-weight: 400;
+  font-size: 36pt;
+  font-style: italic;
+  color: #000033;
+}
+
+.head::after {
+  content: "";
+  display: block;
+  margin-left: -30px;
+  margin-top: -0px;
+  border-top: 1.5px solid;
+}
+
+div.subhead {
+  display: block;
+  float: right;
+  margin-top: -18px;
+  align: right;
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 23pt;
+}
+
+h1 {
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-weight: 400;
+  font-size: 42pt;
+  letter-spacing: 30px;
+  text-align: center;
+  max-width: 740px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  margin-left: 0px;
+  margin-top: 0px;
+  border-top: .75px solid;
+  max-width: 740px;
+}
+
+h2 {
+  font-family: austin-pen, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 28pt;
+  font-style: normal;
+  margin-left: 40px;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  margin-left: -40px;
+  margin-top: -28px;
+  border-top: .75px solid;
+  max-width: 740px;
+}
+
+h3 {
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18pt;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 700px;
+}
+
+h3::after {
+  content: "";
+  display: block;
+  /*
+  margin-left: -40px;
+  margin-top: -28px;
+  */
+  border-top: .75px solid;
+  max-width: 740px;
+}
+
+p {
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-size: 14pt;
+  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 700px;
+
+}
+
+p,
+li {
+  line-height: 1.4
+}
+
+em {
+  font-style: italic;
+}
+
+ul.inline {
+  margin-top: -10px;
+  margin-bottom: -13px;
+}
+
+li {
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-size: 14pt;
+}
+
+p.subhead {
+  font-size: 18pt;
+  line-height: 1.6;
+}
+
+table {
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 720px;
+}
+
+td {
+  font-family: goudy-old-style, Times New Roman, serif;
+  font-size: 14pt;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  vertical-align: top;
+}
+
+a {
+  color: #000033;
+  text-decoration: underline;
+}
+
+a.invisible {
+  color: #000033;
+  text-decoration: none;
+}
