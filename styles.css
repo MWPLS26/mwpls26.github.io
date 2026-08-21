@@ -50,13 +50,14 @@ h1 {
   letter-spacing: 30px;
   text-align: center;
   max-width: 740px;
+  padding-top: 40px;
 }
 
 h1::after {
   content: "";
   display: block;
   margin-left: 0px;
-  margin-top: 0px;
+  margin-top: 40px;
   border-top: .75px solid;
   max-width: 740px;
 }
