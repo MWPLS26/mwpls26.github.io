@@ -94,9 +94,9 @@
     The main venue for MWPLS'26 is the <a class="invisible" href="https://oldcap.uiowa.edu/">Old Capitol Museum</a> at the <a class="invisible" href="https://uiowa.edu">University of Iowa</a>. Registration and breaks will take place in the atrium, and talks will take place in the Senate chamber. Dinner will be informal, but local students will organize expeditions to local food and drink institutions. More details will be provided at the summit.
   </p>
 
-  <table>
+  <table class="expands" width="100%">
     <tr>
-      <td>
+      <td width="18%">
         <strong>
           8:00–9:00
         </strong>
@@ -105,14 +105,7 @@
         <strong>
           Registration and breakfast
         </strong>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Atrium
-        </em>
+        (Atrium)
       </td>
     </tr>
     <tr>
@@ -125,14 +118,7 @@
         <strong>
           Welcome and opening remarks
         </strong>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Senate Chamber
-        </em>
+        (Senate Chamber)
       </td>
     </tr>
     <tr>
@@ -145,16 +131,164 @@
         <strong>
           Session 1 of contributed talks
         </strong>
+        (Senate Chamber)
       </td>
     </tr>
     <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Senate Chamber
-        </em>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%">
+              9:00–9:20
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="1"/>
+
+              <label for="1">
+              <i>An Algebraic Perspective on Operational Semantics</i> <br>
+              Eric Bond
+              </label>
+
+              <div class="content">
+              <p>
+                Languages with effects are typically given two independently specified semantic accounts: a denotational semantics based on (free) algebras, and an operational semantics defined by effect-specific  reduction rules. This separation leads to two independently constructed  semantic structures whose relationship must then be established a posteriori. We present a unified construction in which both denotational interpretation  and operational reduction are constructed from an algebraic theory specifying  the effects.
+              </p>
+
+              <p>
+                First, we prove both equational canonicity and termination for a tree-based operational semantics that leaves effects uninterpreted using logical relations methods.
+              </p>
+
+              <p>
+                Secondly, we derive more standard configuration-based small-step operational semantics mechanically from any free model of the algebraic theory that is presented as a well-behaved monad container.  The rules of effect reduction in the operational semantics are derived from the interpretation of effect operations in the free model, making the construction sound with respect to the denotational semantics by construction.
+              </p>
+
+              <p>
+                With simple semantic conditions on the monad container, we can derive termination of the configuration-based semantics from termination of the tree-based semantics. We instantiate our framework with theories of state, errors, logging, and non-determinism to show the framework reproduces ad hoc operational semantics.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%">
+              9:20–9:40
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="2"/>
+
+              <label for="2">
+              <i>Incremental Hygienic Macros via Demand-Driven Computation</i> <br>
+              Ethan Hawk
+              </label>
+
+              <div class="content">
+              <p>
+                Modern compilers are incremental, but when programmers use macros, most incremental compilers give up and recompile the macros and downstream uses from scratch. We show that hygenic macro expansion can be expressed using demand-driven incremental computation, and thus particpate fully in incremental compilation. Traditional implementations of hygiene resist incrementalization, yet we show that they can be refactored to support reuse despite a wide variety of code changes.
+              </p>
+
+              <p>
+                We combine several techniques to enable incremental macro expansion. Stable pedigrees give each generated scope and local binding a consistent address based on where it is created during expansion. Shared tables are partitioned into individually tracked entries, so updating one binding does not invalidate unrelated lookups.  The system delays propagating hygiene information through nested syntax until that syntax is inspected, and treats source positions as dependencies only for macros that observe them. Finally, the expander avoids recording the same dependencies repeatedly across nested expansion steps. On re-expansion, a cached step is reused if everything previously depended upon is unchanged; otherwise the step runs again.
+              </p>
+
+              <p>
+                We apply these techniques to reduced version of Racket's macro expander atop a port of the Adapton incremental computation design to Racket and confirm that the resulting system produces from-scratch consistent results in all tests. Our experiments show substantial reductions in repeated expansion work for both unchanged inputs and local edits, with recomputation following the affected portion of the expansion. These results establish that the complexities of modern hygenic macro systems do not preclude precise incremental reuse.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%">
+              9:40–10:00
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="3"/>
+
+              <label for="3">
+              <i>Toward a Theory of Runtime-Checkable Assertions for Quantum Programs</i> <br>
+              Adela Deng
+              </label>
+
+              <div class="content">
+              <p>
+                Quantum programs are growing in scale and practical relevance, but they are highly error-prone because they rely on unfamiliar features such as superposition and entanglement. Runtime assertions are a useful tool for catching errors. They are trivial to implement in classical programs but difficult in quantum programs, because measurements may collapses the quantum states prematurely and the no-cloning theorem prevents us from easily inspecting a copy. Due to these phenomena, in general it is not possible to safely check all properties of quantum programs that can be checked for classical programs, and it is unknown precisely what class of properties can be soundly checked.
+              </p>
+
+              <p>
+                In this work, we aim to classify the assertions about quantum programs that can be verified at runtime. Much prior work focuses on projection-based predicates, which assert that the program state lies in a given subspace (Li et al. 2020). However, projections do not capture every assertion that can be checked at runtime. For example, a SWAP test on two copies of a subsystem estimates its purity, which reveals whether that subsystem is entangled with the rest of the system (Buhrman et al. 2001). No projection on a single copy of the state can express this property, meaning that developers today cannot check numerous properties of interest using available tools. Our goal is a theory that unifies different kinds of assertions we can check today, giving a single framework for reasoning about properties of quantum programs and potentially revealing new classes of runtime-checkable assertions.
+              </p>
+
+              <p>
+                In this talk, we will present the properties we have identified so far that yield runtime-checkable assertions useful for implementing correct quantum algorithms. This is work in progress, and we welcome feedback from the audience as we continue to develop it.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              10:00–10:20
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="4"/>
+
+              <label for="4">
+              <i>SpecFlow: Reasoning about Microarchitectural Security at the Pipeline Level</i> <br>
+              Yonathan	Fisseha
+              </label>
+
+              <div class="content">
+              <p>
+                Domain-specific languages have seen widespread usage in the computer architecture world. PDL is one such recent DSL for describing pipelines with novel abstractions for hazard and speculation. Unfortunately, PDL was presented as a compiler implemented in Scala with only informal semantics,  undercutting one of the benefits of such a DSL: the ability to concisely and formally reason about pipelines. Additionally, PDL is focused on functional properties and defers security properties to future work. In this work, we propose SpecFlow to remedy both of these shortcomings. We start by providing formal semantics for a PDL-like core language without the lock abstractions, so the hidden internal state of locks becomes explicit state exposed to our analysis. Then, building on this explicit state, we parametrize the security statement by leakage contracts and attacker observation models to describe and reason about security properties in the same language. Because we model the microarchitecture with enough granularity, we can describe a wide range of speculative and non-speculative microarchitectural attacks and defenses. We demonstrate the expressiveness of SpecFlow by designing both toy pipelines and ISAs as well as RV64 pipelines with branch speculation, caches, register renaming, forwarding, and variable-latency functional units. Our semantics is executable in Lean, and our proofs are partially mechanized as of now. In our ongoing work, we are exploring type systems for SpecFlow to efficiently check designs' security claims and enable rapid design space exploration both by agents and humans.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!--
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="1"/>
+
+              <label for="1">
+              <i></i> <br>
+
+              </label>
+
+              <div class="content">
+              <p>
+
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    -->
     <tr>
       <td>
         <strong>
@@ -165,14 +299,7 @@
         <strong>
           Coffee break
         </strong>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Atrium
-        </em>
+        (Atrium)
       </td>
     </tr>
     <tr>
@@ -185,14 +312,125 @@
         <strong>
           Session 2 of contributed talks
         </strong>
+        (Senate Chamber)
       </td>
     </tr>
     <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Senate Chamber
-        </em>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              10:50–11:10
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="5"/>
+
+              <label for="5">
+              <i>Formalizing einsum with Named Tensor Notation</i> <br>
+              Yafei	Yang
+              </label>
+
+              <div class="content">
+              <p>
+                Einstein notation (einsum) is a widely adopted tensor operation that has proven useful in areas such as machine learning and quantum computing.
+                But it had no formal semantics until recently, and its properties had no mechanized verification.
+                We formalize the denotational semantics of a language of tensors (multi-dimensional arrays) that supports einsum and repeated tensors (expand).
+                With this semantics, we verify equational rewriting rules about einsum and expand that improve the performance of tensor computation.
+                Whereas typical languages use unnamed tensors, whose shape is a sequence of natural numbers, we found it advantageous for mechanization to use named tensors, whose shape is a finite map from names to natural numbers.
+                To our knowledge, this is the first time that the semantics and rewriting rules of einsum are mechanized in a proof assistant.
+                Our solution is agnostic to proof assistants; we have implemented it in Lean and partially in Agda.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              11:10–11:30
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="6"/>
+
+              <label for="6">
+              <i>Automated Assertion Generation and Regression Testing for Machine Learning Notebooks</i> <br>
+              Elaine	Yao
+              </label>
+
+              <div class="content">
+              <p>
+                Jupyter Notebooks have become the de-facto choice for data scientists and machine learning (ML) engineers for prototyping and experimenting with ML pipelines. Notebooks provide a rich interactive interface with support for code, data, and visualization in one place. However, notebooks provide limited support for testing. As a result, during continuous development, many silent (non-crashing) regressions often go unnoticed and make notebooks unreliable and results hard to reproduce.
+              </p>
+
+              <p>
+                To enable more systematic testing of ML notebooks, we introduce NBTestGen – the first automated assertion generation approach for ML notebooks. NBTestGen generates regression-based assertions that check properties related to data processing, model building, and model evaluation steps in a typical ML notebook. To support systematic integration of such assertions in notebooks, we introduce the first regression testing framework (called NBTest) that can be used as a Jupyter plugin and allows developers to write cell-scoped assertions in notebooks. Three key features of such assertions are that they are 1) cell-scoped: they are linked to specific notebook cells and execute only after those cells are executed, 2) non-intrusive: they do not block notebook execution (in a Jupyter session), so that development can continue when they fail, and 3) they integrate with pytest and CI pipelines, allowing developers to easily do regression testing of their notebooks.
+              </p>
+
+              <p>
+                We evaluate NBTestGen on a corpus of 585 notebooks from the popular Kaggle platform. NBTestGen generates a total of 21542 assertions (36.82 on average per notebook). The generated assertions kill 72.21% of ML-specific mutations, while maintaining a high pass-rate of 100.00%. We also show that NBTestGen can detect 69.68% of historical regressions in 531 older versions of Kaggle notebooks. A popular ML library, SHAP, integrated NBTest into their CI. Further, we perform a user study with 17 ML developers that shows such users find NBTest highly intuitive and useful.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              11:30–11:50
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="7"/>
+
+              <label for="7">
+              <i>Stochastic Summaries: Characterizing Structured Datasets Using Probabilistic Programs</i> <br>
+              Jack	Stanek
+              </label>
+
+              <div class="content">
+              <p>
+                We study the problem of summarizing discrete datasets by their statistical properties. These "stochastic summaries" serve as a profile or an abstraction for datasets, much like logical properties or other structural abstractions commonly studied in literature. In particular, we identify the formal problem of learning these probabilistic summaries for datasets of tree-like data in the form of inductive datatypes, and argue that probabilistic programs can effectively represent the desired summaries. We present Tali, a recursive probabilistic programming language over inductive datatypes which admits efficient inference, and study the problem of learning such programs from data samples. We then propose an algorithm for learning recursive generative programs from observations using a combination of stochastic program synthesis via Metropolis-style search and parameter fitting by gradient-based optimization. We implement our learning framework, evaluate it on a diverse benchmark suite, including both synthetic and real-world datasets, and record our observations on the merits of our approach.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              11:50–12:10
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="8"/>
+
+              <label for="8">
+              <i>Pasiv-Aggressive: Interactive Diagnosis and Repair of Spurious Failures in SMT-based Program Verification</i> <br>
+              Patrick	LaFontaine
+              </label>
+
+              <div class="content">
+              <p>
+                Satisfiability Modulo Theory (SMT) solvers are under the hood of most automated program verifiers, including Dafny, Verus, Liquid Haskell, and Poirot. Unfortunately, there is a semantic gap between the theories supported by SMT solvers and the properties these verifiers let users express. For user-defined data structures and properties, closing this gap means that these verification-aware languages require users to write facts such as axioms, helper lemmas, or invariants into their programs. When verification fails, SMT solvers provide limited support for diagnosing and remedying these failures. We propose supplementing these automated tools with a failure localization approach which uses an interactive proof to derive the facts needed to repair the program.
+              </p>
+
+              <p>
+                We implement this approach as Pasiv, a tool for translating a failing query into a proof statement in an Interactive Theorem Prover (ITP). Given this proof statement, users interactively prove the goal while being constrained to tactics that correspond to the logic of the SMT solver. When no progress can be made, users can switch to a richer logic to complete the proof, adding missing facts needed back into the logic. We formalize this approach as a novel abduction mechanism for adding new facts to the proof context which are used to repair a localized failure. A completed proof then contains the necessary facts and can be translated back into the source program. Pasiv supports both Lean and Rocq as proof backends with custom tactics to aid in the proof effort. We evaluate our approach to show it applies across multiple program verification tools and failure modes on benchmarks from verification-aware languages and the proof instability literature.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
     <tr>
@@ -205,14 +443,7 @@
         <strong>
           Lunch and poster session
         </strong>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Atrium
-        </em>
+        (Atrium)
       </td>
     </tr>
     <tr>
@@ -225,14 +456,119 @@
         <strong>
           Session 3 of contributed talks
         </strong>
+        (Senate Chamber)
       </td>
     </tr>
     <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Senate Chamber
-        </em>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              14:20–14:40
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="9"/>
+
+              <label for="9">
+              <i>Choreographing Effects</i> <br>
+              Jonghyun Jung, Cong Ma, and Yizhou Zhang
+              </label>
+
+              <div class="content">
+              <p>
+                Choreographic programming is a programming paradigm for concurrent and distributed systems in which the behavior of the system is implemented as a global description called a choreography. The choreography is then projected into local programs by the compiler, which enables strong static guarantees about the behavior of the system such as deadlock freedom. Recent research has shifted towards a functional style of choreographic programming to allow writing higher-order choreographies for better modularity. However, it remains unclear how to support non-local control patterns, such as exception handling, in modern choreographic formalisms and implementations without breaking static guarantees such as deadlock freedom.
+              </p>
+
+              <p>
+                In this paper, we present ChorEff, a new choreographic language that supports effect handlers, a powerful abstraction that generalizes control flow constructs such as exceptions, continuations, and coroutines. Our key contribution is to identify and solve the problem of knowledge of control: only the processes that raise an effect know that control has transferred, but the handler may involve other processes who must be informed. We integrate effect handlers into a core model for functional choreographies with a semilenient semantics, and prove that our language preserves modularity and deadlock freedom, and that every effect raised is handled. We also implement our language in OCaml, a functional language with native support for effect handlers, by leveraging PPX extensions to perform endpoint projection at compile time. We formalize our core language and proofs of key results in Lean.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              14:40–15:00
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="10"/>
+
+              <label for="10">
+              <i>Towards a Formal Foundation of Intermittent Concurrency</i> <br>
+                Myra	Dotzel
+              </label>
+
+              <div class="content">
+              <p>
+                Intermittent computing is gaining traction in environments where energy is scarce and manual device maintenance is infeasible. These applications rely on batteryless energy-harvesting devices, which experience frequent and arbitrary power failures. Thus, programs running on these devices require system support to save state and re-execute after a power failure. Moreover, realistic intermittent systems should involve handling concurrent hardware-triggered interrupts, which may not re-execute due to time-sensitivity, and could write to shared memory locations. However, prior work supporting concurrent, intermittent execution is sparse, providing no formal guarantees for such programs. This paper lays the foundations for supporting the correct intermittent execution of task-based concurrent programs with shared memory by proposing Glacier, a co-designed runtime system and type system. Glacier promotes a more flexible programming model than is considered by prior work, supporting a broad spectrum of task re-execution behaviors. We provide the first formal definition and proofs of correctness for concurrent, intermittent execution.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              15:00–15:20
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="11"/>
+
+              <label for="11">
+              <i>Biscotti, An Approach to Parallel Scheduling for Vectorized Encrypted Arithmetic Circuits</i> <br>
+              Vedant Paranjape
+              </label>
+
+              <div class="content">
+              <p>
+                Fully Homomorphic Encryption (FHE) enables secure computation on encrypted data, ensuring privacy in various applications. However, FHE’s practicality is constrained by the substantial overhead of encrypted computation. This overhead can be partially mitigated by using vectorization strategies to optimize FHE computations. The unique semantics of FHE computations make vectorizing arbitrary applications challenging, so recent research focuses on applying synthesis-based techniques, which have the drawback of failing to scale well to vectorizing large programs. We propose Biscotti, an FHE vectorizer that targets “divide-and-conquer” parallelism in recursive programs. Biscotti identifies smaller subproblems that can be vectorized independently using off-the-shelf synthesis based approaches, and then uses a novel algorithm to combine these into a vector schedule for the full program. We demonstrate on a variety of common benchmarks that Biscotti’s approach not only improves compilation times, but also results in more efficient schedules overall.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              15:20–15:40
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="12"/>
+
+              <label for="12">
+              <i>Compositional Inductive Invariant Inference for Component-Based Parameterized Systems</i> <br>
+                Ian Dardik
+              </label>
+
+              <div class="content">
+              <p>
+                Component-based parameterized systems are an expressive modeling paradigm that capture complex systems and distributed protocols. Verifying component-based parameterized systems usually reduces to an inductive invariant inference problem, that is, finding a first-order logic formula that is closed over the transition relation of the entire system and implies safety. The resulting inductive invariant is monolithic—as it is inductive for the entire system—which has three key consequences: (1) the invariant generally refers to every state variable in the system, even when proving local properties, (2) the global safety proof is not robust, in the sense that small changes to the system require finding a brand new inductive invariant, and (3) global invariant inference is notoriously inefficient.
+              </p>
+
+              <p>
+                In this talk, I will present our research into a compositional theory of inductive invariants that addresses the three problems identified above. In our theory, inductive invariants are local and composable, global safety proofs are robust against local changes to the system, and local invariant inference is efficient. The main innovation behind our theory is a new type of assume-guarantee contract that is proved to be valid by a local inductive invariant. We also propose contract composition rules that we prove to be sound in general and complete for deterministic systems.
+              </p>
+
+              <p>
+              Ultimately, when verifying system safety, the proof obligations in our theory are to (1) create an assume-guarantee contract for each component and (2) infer a local inductive invariant for each component that proves that its corresponding contract is valid. In this talk, I will describe an algorithm that automates these two steps using the well-known CEGIS framework. We have implemented our algorithm in a tool that solves the component-based parameterized verification problem. I will also present an evaluation of our approach on several distributed protocols in which our tool shows competitive performance with SOTA invariant inference tools.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
     <tr>
@@ -245,14 +581,7 @@
         <strong>
           Coffee break
         </strong>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Atrium
-        </em>
+        (Atrium)
       </td>
     </tr>
     <tr>
@@ -265,14 +594,114 @@
         <strong>
           Session 4 of contributed talks
         </strong>
+        (Senate Chamber)
       </td>
     </tr>
     <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Senate Chamber
-        </em>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              16:30–16:50
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="13"/>
+
+              <label for="13">
+              <i>Revisiting Occurrence Typing, Semantically</i> <br>
+                Yuquan Fu, Carlo Angiuli, and Sam Tobin-Hochstadt
+              </label>
+
+              <div class="content">
+              <p>
+                Over the past two decades, numerous systems have brought some of the benefits of dependent typing to a wide variety of new programming languages, often by restricting which terms can appear inside types. Such techniques are known as refinement types, occurrence typing, liquid types, and path dependent types, among others. However, the restrictions adopted by these systems often break the substitution property, because they explicitly disallow the ability to substitute arbitrary terms for variables inside types. This leads to significant complexity in the design and metatheory of these systems, increasing the possibility of significant errors.
+              </p>
+
+              <p>
+                We consider a specific line of work on occurrence typing, namely, the calculus underlying Typed Racket due to Tobin-Hochstadt and Felleisen(2010). We show that the fundamental challenge of substitution into types resulted in multiple flaws in the formalism and the syntactic type soundness theorem of this work. These flaws are replicated in several other papers building on this work, and also surface as a soundness bug in Typed Racket itself. We identify and repair these problems, revising the core calculus of Typed Racket and giving a semantic type soundness proof using step-indexed logical relations, formalized in Lean. We argue that this approach is simpler than it may seem, and easily scales to handle the complexity of the occurrence typing in Typed Racket.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              16:50–17:10
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="14"/>
+
+              <label for="14">
+              <i>Normalization By Evaluation of Higher-Order Rows</i> <br>
+                Alex Hubers
+              </label>
+
+              <div class="content">
+              <p>
+                Row types map labels to types, and are used to type records and variants structurally. The presence of higher-order rows, in which rows may contain type operators or even other rows, introduces nontrivial forms of type computation. This talk presents a sound and complete equational theory for types in Rωμ ("Rome"), a higher-order row type theory. We normalize Rωμ types by evaluation in the interactive proof assistant Agda, and prove this procedure is stable, sound, and consistent. As a result, we obtain the first decidable type-conversion algorithm for a higher-order row type theory.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              17:10–17:30
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="15"/>
+
+              <label for="15">
+              <i>A Dependent Type Theory with Strictly Associative and Unital Sigma Types </i> <br>
+                Kelton OBrien
+              </label>
+
+              <div class="content">
+              <p>
+                We present "Cormorant", a version of Martin-Löf Dependent Type Theory (MLTT) with a Σ type that is judgmentally associative and unital. That is, Cormorant affirms judgemental equalities Γ ⊢ Σ(Σ A B) C ≡ Σ A (Σ B C) and Γ ⊢ Σ A Unit ≡ A, as well as the required context equations for these equalities to be well formed. These equalities we now enjoy make pose some difficulties in constructing a typechecker for the theory, but we present some techniques we use to do so. We present the theory, as well as algorithmic elaborator from a surface syntax into the logic, and demonstrate our implementation of the elaborator by showing some novel programs that are possible to write in our theory that are not possible to write in MLTT. We also describe the currently-in-progress work on proving important metatheorems (chiefly normalization), which Cormorant appears to enjoy despite the fact that it does not have injective type constructors.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+              17:30–17:50
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="16"/>
+
+              <label for="16">
+              <i>Lightweight Parametric Polymorphism via Domain and Range Types</i> <br>
+                Siyuan He
+              </label>
+
+              <div class="content">
+              <p>
+                Subtyping allows polymorphism at a low price: a concise type such as Int → Top covers every function that accepts an integer, whatever it returns, whereas the parametric alternative ∀𝐵. Int → 𝐵 spends a quantifier and a type parameter, a difference that compounds as types nest and leaves signatures heavyweight and less intuitive. The polymorphism via subtyping, however, is not always enough, as upcasting to Int → Top forgets the result type, so a program that needs the precise result must abandon the concise signature and return to full parameterization. The missing middle ground is a lightweight polymorphism that keeps the concise, readable types of subtyping yet recovers the precision of parametricity. TypeScript’s Parameters&lt;T&gt; and ReturnType&lt;T&gt; reach for it but stand only on the unsafe any, and type destructors reach it soundly but only for covariant types, leaving the arrow-type case open.
+              </p>
+              <p>
+                We present F&lt;:DR, a conservative extension of System F&lt;: with first-class domain and range projection types, Dom(T) and Range(T), and an application rule that types f(x) from f : F and x : Dom(F) for an arbitrary type F. The demand that F be exposed as an arrow type is delayed from the definition site to the call site and discharged by the argument itself, as a value of type Dom(F) exists only when F is a subtype of an arrow type. A function type variable then needs no informative bound, only &lt;: Top, while its applications still type precisely, reaching the middle ground through a boundless quantification.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
     <tr>
@@ -285,14 +714,7 @@
         <strong>
           Closing remarks
         </strong>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <em>
-          Old Capitol Senate Chamber
-        </em>
+        (Senate Chamber)
       </td>
     </tr>
   </table>

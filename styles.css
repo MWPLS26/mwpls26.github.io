@@ -157,3 +157,19 @@ a.invisible {
   color: #000033;
   text-decoration: none;
 }
+
+.expands input[name="collapse"]:not(:checked)~.content {
+  display: none;
+}
+
+.expands input[name="collapse"]:checked~.content {
+  display: block;
+}
+
+input {
+  display: none;
+}
+
+label:hover {
+  text-decoration: underline;
+}
