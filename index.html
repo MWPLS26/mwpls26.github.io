@@ -451,6 +451,157 @@
       </td>
     </tr>
     <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="17"/>
+              <label for="17">
+              <i>SoCal: A Langauge for Memory-Layout Factorization of Recursive Datatypes</i> <br>
+              Vidush Singhal
+              </label>
+
+              <div class="content">
+              <p>
+                Array-of-structures (AoS) to structure-of-arrays (SoA) is a classic compiler transformation that improves memory locality and enables data-parallel execution. Existing AoS-to-SoA transformations primarily target regular, array-based programs in imperative languages like C and C++. In contrast, many applications manipulate tree-shaped data structures, for example, ASTs in compilers, DOM trees in browsers, and k-d trees in scientific workloas. Pdrior work improves the performance of functional programs operating on such data by serializing algebraic datatypes (ADTs) into contiguous memory buffers. However, these representations interleave fields within a single buffer, similar to AoS layouts. We introduce factored, multi-buffer layouts that store different ADT fields in separate buffers, enabling SoA-like layouts for serialized recursive data structures. We formalize this approach in SoCal, a language for generating factored ADT representations, and implement it in a compiler called Colobus. Colobus automatically transforms functional programs to operate over a serialized, factored layout of recursive ADTs. Our evaluation shows a 1.46x geometric mean speedup on a suite of tree-processing benchmarks.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="18"/>
+              <label for="18">
+              <i>Formal operations specifications for reliable system management</i> <br>
+                Jinlang Wang
+              </label>
+
+              <div class="content">
+              <p>
+                Large-scale production systems are increasingly managed by automated software, such as Kubernetes operators, and autonomous AI agents rather than traditional human-centric processes. Unlike network infrastructure with standardized and well-defined behaviors, modern production systems exhibit highly diverse functionalities, interfaces, and fault-tolerance properties, resulting in complex and non-standard management semantics. Currently, management-plane software is predominantly built on top of informal documentation and empirical domain knowledge, making correct system management a best-effort endeavor.
+              </p>
+
+              <p>
+                To address this reliability challenge, we advocate for the adoption of Formal Operations Specification (FOS) as a precise, formal contract that describes the expected behaviors of production systems. An FOS enables systematic checking and verification of management-plane software and automated agents. We argue that FOS should be integrated into standard system interfaces to guarantee reliable management. Finally, we propose that every production system incorporate an FOS, supported by our practical experience in authoring FOSes for real-world systems, which demonstrates that writing and maintaining these specifications is cost-effective and amenable to future automation.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="19"/>
+              <label for="19">
+              <i>Detecting Price Manipulation Vulnerabilities Through TLA+ Model Checking</i> <br>
+                Zheng Wangyuan
+              </label>
+
+              <div class="content">
+              <p>
+                Price manipulation attacks remain prevalent and difficult to detect in smart contract security research. I propose a systematic methodology for developing formal  models in TLA+ to help software engineers and auditors identify vulnerabilities arising from AMM-based and oracle-based price manipulation before deployment. Using the Platypus and Makina attacks as case studies, I demonstrate how model checking can generate profitable attack sequences, which I validated on local blockchain forks. These case studies highlight the value of modular specifications and show how techniques from program analysis and systems engineering can address practical challenges in modeling and verification.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="20"/>
+              <label for="20">
+              <i>Bring Your Own Formats and Kernels: Composable Abstractions for Sparse Matrix Computation</i> <br>
+                Pratyush Das
+              </label>
+
+              <div class="content">
+              <p>
+                Real-world sparse matrices often feature multiple forms of structured sparsity, e.g., dense rectangular blocks, diagonal bands, and scattered entries. Hybrid storage formats can exploit such structure by storing each subregion of a matrix in its most efficient form. Existing hybrid approaches, however, only support fixed sets of formats and kernels, so incorporating a new representation or kernel requires modifying their internals.
+              </p>
+
+              <p>
+                We present SABLE, a framework that lets users build bespoke hybrid formats compositionally through a plan–extract–dispatch interface. Users define extractors that carve a matrix into format-specific regions and kernels that emit specialized C code for each region; SABLE assembles these pieces into a single program specialized to the target matrix at compile time. Both components are independent and composable, so a new format automatically integrates with all existing kernels without any changes to the framework.
+              </p>
+
+              <p>
+                We demonstrate this extensibility by introducing VDIA, a new format for diagonal bands of non-uniform length, and composing it to build two new hybrid formats—VDIA+CSR and VDIA+VBR+CSR. We evaluate SABLE on SpMV and SpMM over SuiteSparse matrices whose structure comprises dense blocks, diagonal bands, or both, and show that these bespoke hybrid formats outperform the best fully sparse baselines.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="21"/>
+
+              <label for="21">
+              <i>RAGRT: Ray Tracing Accelerated Multi Vector Retrieval</i> <br>
+                Jack Cashman
+              </label>
+
+              <div class="content">
+              <p>
+                In RAG pipelines data movement from candidate generation is the primary bottleneck for multi vector late interaction retrieval. RAGRT maps candidate generation to ray tracing cores, turning a linear search into logarithmic traversal. Codebooks are mapped to the scene, query tokens are mapped to rays, and ray traversal finds the nearest centroids for a CUDA kernel to score. RAGRT yields a roughly 3.4x and 2.5x speedup at matched Recall@10 over PLAID on LoTTE and MS MARCO respectively, with tight tail latency, flat scaling under batching, and reduced DRAM traffic. While tensor units accelerate computation, ray tracing cores accelerate data movement for irregular access patterns, this frees memory bandwidth for the language model in batched agentic serving.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table width="100%">
+          <tr>
+            <td width="18%"">
+            </td>
+            <td>
+              <input type="checkbox" name="collapse" id="22"/>
+              <label for="22">
+              <i>Coverage Types Modulo Equivalences</i> <br>
+                Aaryan Prakash
+              </label>
+
+              <div class="content">
+              <p>
+                Property-based testing in practice often involves writing complex input generators, which can be hard to manually verify if they cover the desired set of inputs. Coverage types have emerged as a potential solution to this problem, an analog to refinement types where functions are annotated with a subset they must be able to generate. However, users may want to treat certain inputs as "equivalent," where they assert that the testing behavior of two distinct inputs is the same. Coverage types do not easily extend to this use case since they enforce all distinct inputs must be generated. We propose an extension to the coverage type system that incorporates equivalence relations between values, where two values are equivalent if users do not care to differentiate between them. We also update the type checking algorithm to correctly and more efficiently handle equivalence queries, and we present preliminary results of the efficacy of this approach.
+              </p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
       <td>
         <strong>
           14:20–16:00
