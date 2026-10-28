@@ -593,13 +593,13 @@
               <input type="checkbox" name="collapse" id="21"/>
 
               <label for="21">
-              <i>RAGRT: Ray Tracing Accelerated Multi Vector Retrieval</i> <br>
-                Jack Cashman
+              <i> When Ray Tracing Cores Fail: Lessons from Multi Vector Retrieval</i> <br>
+              Jack Cashman, David Dedic, Fouad Afiouni, Milind Kulkarni
               </label>
 
               <div class="content">
               <p>
-                In RAG pipelines data movement from candidate generation is the primary bottleneck for multi vector late interaction retrieval. RAGRT maps candidate generation to ray tracing cores, turning a linear search into logarithmic traversal. Codebooks are mapped to the scene, query tokens are mapped to rays, and ray traversal finds the nearest centroids for a CUDA kernel to score. RAGRT yields a roughly 3.4x and 2.5x speedup at matched Recall@10 over PLAID on LoTTE and MS MARCO respectively, with tight tail latency, flat scaling under batching, and reduced DRAM traffic. While tensor units accelerate computation, ray tracing cores accelerate data movement for irregular access patterns, this frees memory bandwidth for the language model in batched agentic serving.
+                Ray tracing (RT) cores are fixed function hardware units which accelerate spatial search workloads. While RT cores have proven to generalize well for many applications including low dimensional nearest neighbor search, discrete collision detection, Barnes Hut, and more, certain problems which we would assume lend themselves to the hardware fail to produce a speedup. We attempted to map the candidate generation stage of multi vector retrieval to the RT core. While end to end latency improved, it did so in spite of the RT mapping rather than as a product of it, which suggests other RT mappings deserve similar scrutiny. This negative finding has helped us identify the critical conditions needed for the RT core to produce a speedup. Search must dominate runtime, data must be low dimensional, and the scene must be large, have few hits, and be sufficiently irregular. These conditions are a first step towards a performance model which would predict when a mapping would benefit performance.
               </p>
               </div>
             </td>
